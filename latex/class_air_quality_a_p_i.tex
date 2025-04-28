@@ -1,0 +1,203 @@
+\doxysection{Air\+Quality\+API Class Reference}
+\hypertarget{class_air_quality_a_p_i}{}\label{class_air_quality_a_p_i}\index{AirQualityAPI@{AirQualityAPI}}
+
+
+Klasa do obsługi API GIOŚ -\/ Głównego Inspektoratu Ochrony Środowiska.  
+
+
+
+
+{\ttfamily \#include $<$API.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_air_quality_a_p_i_ad3b0a14e4825b9149084bc5300a8888f}\label{class_air_quality_a_p_i_ad3b0a14e4825b9149084bc5300a8888f} 
+{\bfseries Air\+Quality\+API} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor, inicjalizuje bibliotekę c\+URL. \end{DoxyCompactList}\item 
+\Hypertarget{class_air_quality_a_p_i_a1bcee590e7af4f9c8cb7413c23d809ba}\label{class_air_quality_a_p_i_a1bcee590e7af4f9c8cb7413c23d809ba} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Air\+Quality\+API} ()
+\begin{DoxyCompactList}\small\item\em Destruktor, zwalnia zasoby biblioteki c\+URL. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{class_air_quality_a_p_i_a71f777380fbd4765112ee9d31f7b4c53}{get\+All\+Stations}} ()
+\begin{DoxyCompactList}\small\item\em Pobiera wszystkie stacje pomiarowe. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{class_air_quality_a_p_i_a3b77012e97ae2fc741511ec228ce0bae}{get\+All\+Sensors}} ()
+\begin{DoxyCompactList}\small\item\em Pobiera wszystkie czujniki dla wszystkich stacji. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{class_air_quality_a_p_i_a91f3810fff0aaccc9b8af82ffeab6d43}{get\+Stations\+By\+City}} (const std\+::string \&city\+Name)
+\begin{DoxyCompactList}\small\item\em Pobiera stacje pomiarowe dla podanego miasta. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{class_air_quality_a_p_i_afc7a0ac1e41cb999761ff269e25cbfa4}{get\+Sensors\+By\+Station}} (int station\+Id)
+\begin{DoxyCompactList}\small\item\em Pobiera czujniki dla danej stacji pomiarowej. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{class_air_quality_a_p_i_a9f0f500095fe3c60a59e0d596092156c}{get\+Measurement\+Data}} (int sensor\+Id)
+\begin{DoxyCompactList}\small\item\em Pobiera dane pomiarowe dla danego czujnika. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{class_air_quality_a_p_i_a0e000f0adc2a84b2be3c8359aa82d8f0}{get\+Air\+Quality\+Index}} (int station\+Id)
+\begin{DoxyCompactList}\small\item\em Pobiera indeks jakości powietrza dla danej stacji. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_air_quality_a_p_i_a1372ab6dcd6fb1702b60332a400a853b}{save\+Json\+To\+File}} (const Json\+::\+Value \&root, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Zapisuje dane JSON do pliku. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{class_air_quality_a_p_i_aa7ed4cf01c1d45678c1b9f99b82ef8ca}{get\+All\+Measurement\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Pobiera dane pomiarowe dla wszystkich czujników. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{class_air_quality_a_p_i_ade8ea52ae2529df18bfefea00e177a13}{read\+Json\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Wczytuje dane JSON z pliku. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa do obsługi API GIOŚ -\/ Głównego Inspektoratu Ochrony Środowiska. 
+
+Klasa zapewnia metody do pobierania danych o jakości powietrza z API GIOŚ, w tym stacje pomiarowe, czujniki, pomiary oraz indeksy jakości powietrza. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_air_quality_a_p_i_a0e000f0adc2a84b2be3c8359aa82d8f0}\index{AirQualityAPI@{AirQualityAPI}!getAirQualityIndex@{getAirQualityIndex}}
+\index{getAirQualityIndex@{getAirQualityIndex}!AirQualityAPI@{AirQualityAPI}}
+\doxysubsubsection{\texorpdfstring{getAirQualityIndex()}{getAirQualityIndex()}}
+{\footnotesize\ttfamily \label{class_air_quality_a_p_i_a0e000f0adc2a84b2be3c8359aa82d8f0} 
+Json\+::\+Value Air\+Quality\+API\+::get\+Air\+Quality\+Index (\begin{DoxyParamCaption}\item[{int}]{station\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Pobiera indeks jakości powietrza dla danej stacji. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em station\+Id} & Identyfikator stacji pomiarowej \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Obiekt Json\+::\+Value zawierający indeks jakości powietrza 
+\end{DoxyReturn}
+\Hypertarget{class_air_quality_a_p_i_aa7ed4cf01c1d45678c1b9f99b82ef8ca}\index{AirQualityAPI@{AirQualityAPI}!getAllMeasurementData@{getAllMeasurementData}}
+\index{getAllMeasurementData@{getAllMeasurementData}!AirQualityAPI@{AirQualityAPI}}
+\doxysubsubsection{\texorpdfstring{getAllMeasurementData()}{getAllMeasurementData()}}
+{\footnotesize\ttfamily \label{class_air_quality_a_p_i_aa7ed4cf01c1d45678c1b9f99b82ef8ca} 
+Json\+::\+Value Air\+Quality\+API\+::get\+All\+Measurement\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pobiera dane pomiarowe dla wszystkich czujników. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Sensors} & Maksymalna liczba czujników, dla których pobierane są dane (domyślnie 20) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Obiekt Json\+::\+Value zawierający dane pomiarowe dla wszystkich czujników 
+\end{DoxyReturn}
+\Hypertarget{class_air_quality_a_p_i_a3b77012e97ae2fc741511ec228ce0bae}\index{AirQualityAPI@{AirQualityAPI}!getAllSensors@{getAllSensors}}
+\index{getAllSensors@{getAllSensors}!AirQualityAPI@{AirQualityAPI}}
+\doxysubsubsection{\texorpdfstring{getAllSensors()}{getAllSensors()}}
+{\footnotesize\ttfamily \label{class_air_quality_a_p_i_a3b77012e97ae2fc741511ec228ce0bae} 
+Json\+::\+Value Air\+Quality\+API\+::get\+All\+Sensors (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pobiera wszystkie czujniki dla wszystkich stacji. 
+
+\begin{DoxyReturn}{Returns}
+Obiekt Json\+::\+Value zawierający dane wszystkich czujników 
+\end{DoxyReturn}
+\Hypertarget{class_air_quality_a_p_i_a71f777380fbd4765112ee9d31f7b4c53}\index{AirQualityAPI@{AirQualityAPI}!getAllStations@{getAllStations}}
+\index{getAllStations@{getAllStations}!AirQualityAPI@{AirQualityAPI}}
+\doxysubsubsection{\texorpdfstring{getAllStations()}{getAllStations()}}
+{\footnotesize\ttfamily \label{class_air_quality_a_p_i_a71f777380fbd4765112ee9d31f7b4c53} 
+Json\+::\+Value Air\+Quality\+API\+::get\+All\+Stations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pobiera wszystkie stacje pomiarowe. 
+
+\begin{DoxyReturn}{Returns}
+Obiekt Json\+::\+Value zawierający dane wszystkich stacji 
+\end{DoxyReturn}
+\Hypertarget{class_air_quality_a_p_i_a9f0f500095fe3c60a59e0d596092156c}\index{AirQualityAPI@{AirQualityAPI}!getMeasurementData@{getMeasurementData}}
+\index{getMeasurementData@{getMeasurementData}!AirQualityAPI@{AirQualityAPI}}
+\doxysubsubsection{\texorpdfstring{getMeasurementData()}{getMeasurementData()}}
+{\footnotesize\ttfamily \label{class_air_quality_a_p_i_a9f0f500095fe3c60a59e0d596092156c} 
+Json\+::\+Value Air\+Quality\+API\+::get\+Measurement\+Data (\begin{DoxyParamCaption}\item[{int}]{sensor\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Pobiera dane pomiarowe dla danego czujnika. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor\+Id} & Identyfikator czujnika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Obiekt Json\+::\+Value zawierający dane pomiarowe 
+\end{DoxyReturn}
+\Hypertarget{class_air_quality_a_p_i_afc7a0ac1e41cb999761ff269e25cbfa4}\index{AirQualityAPI@{AirQualityAPI}!getSensorsByStation@{getSensorsByStation}}
+\index{getSensorsByStation@{getSensorsByStation}!AirQualityAPI@{AirQualityAPI}}
+\doxysubsubsection{\texorpdfstring{getSensorsByStation()}{getSensorsByStation()}}
+{\footnotesize\ttfamily \label{class_air_quality_a_p_i_afc7a0ac1e41cb999761ff269e25cbfa4} 
+Json\+::\+Value Air\+Quality\+API\+::get\+Sensors\+By\+Station (\begin{DoxyParamCaption}\item[{int}]{station\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Pobiera czujniki dla danej stacji pomiarowej. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em station\+Id} & Identyfikator stacji pomiarowej \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Obiekt Json\+::\+Value zawierający dane czujników 
+\end{DoxyReturn}
+\Hypertarget{class_air_quality_a_p_i_a91f3810fff0aaccc9b8af82ffeab6d43}\index{AirQualityAPI@{AirQualityAPI}!getStationsByCity@{getStationsByCity}}
+\index{getStationsByCity@{getStationsByCity}!AirQualityAPI@{AirQualityAPI}}
+\doxysubsubsection{\texorpdfstring{getStationsByCity()}{getStationsByCity()}}
+{\footnotesize\ttfamily \label{class_air_quality_a_p_i_a91f3810fff0aaccc9b8af82ffeab6d43} 
+Json\+::\+Value Air\+Quality\+API\+::get\+Stations\+By\+City (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{city\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Pobiera stacje pomiarowe dla podanego miasta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Name} & Nazwa miasta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Obiekt Json\+::\+Value zawierający dane stacji w danym mieście 
+\end{DoxyReturn}
+\Hypertarget{class_air_quality_a_p_i_ade8ea52ae2529df18bfefea00e177a13}\index{AirQualityAPI@{AirQualityAPI}!readJsonFromFile@{readJsonFromFile}}
+\index{readJsonFromFile@{readJsonFromFile}!AirQualityAPI@{AirQualityAPI}}
+\doxysubsubsection{\texorpdfstring{readJsonFromFile()}{readJsonFromFile()}}
+{\footnotesize\ttfamily \label{class_air_quality_a_p_i_ade8ea52ae2529df18bfefea00e177a13} 
+Json\+::\+Value Air\+Quality\+API\+::read\+Json\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Wczytuje dane JSON z pliku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Nazwa pliku do wczytania \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Obiekt Json\+::\+Value zawierający wczytane dane 
+\end{DoxyReturn}
+\Hypertarget{class_air_quality_a_p_i_a1372ab6dcd6fb1702b60332a400a853b}\index{AirQualityAPI@{AirQualityAPI}!saveJsonToFile@{saveJsonToFile}}
+\index{saveJsonToFile@{saveJsonToFile}!AirQualityAPI@{AirQualityAPI}}
+\doxysubsubsection{\texorpdfstring{saveJsonToFile()}{saveJsonToFile()}}
+{\footnotesize\ttfamily \label{class_air_quality_a_p_i_a1372ab6dcd6fb1702b60332a400a853b} 
+void Air\+Quality\+API\+::save\+Json\+To\+File (\begin{DoxyParamCaption}\item[{const Json\+::\+Value \&}]{root}{, }\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Zapisuje dane JSON do pliku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & Dane w formacie Json\+::\+Value do zapisania \\
+\hline
+{\em filename} & Nazwa pliku do zapisu \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+API.\+h\item 
+API.\+cpp\end{DoxyCompactItemize}

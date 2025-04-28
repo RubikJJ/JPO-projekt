@@ -1,0 +1,32 @@
+\doxysection{Data\+Storage.\+h}
+\hypertarget{_data_storage_8h_source}{}\label{_data_storage_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <json/json.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_data_storage_a6ae8039bd1da1bd1dd8fffc3da4b91bb}{DataStorage}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ dataPath;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ WriteCallback(\textcolor{keywordtype}{void}*\ contents,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ nmemb,\ \textcolor{keywordtype}{void}*\ userp);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ performCurlRequest(\textcolor{keyword}{const}\ std::string\&\ url,\ std::string\&\ response);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ parseJsonResponse(\textcolor{keyword}{const}\ std::string\&\ jsonResponse,\ Json::Value\&\ parsedRoot);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_data_storage_a6ae8039bd1da1bd1dd8fffc3da4b91bb}{DataStorage}}(\textcolor{keyword}{const}\ std::string\&\ path\ =\ \textcolor{stringliteral}{"{}data/"{}});}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ Json::Value\ \mbox{\hyperlink{class_data_storage_a47d974024512735bc2d8e59a7e390e01}{loadJsonData}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_data_storage_a39e4a1362eb4a0745465d8171b28d8b1}{dataExists}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_storage_a67a709e01d3387725606d1a23957c48d}{saveJsonToFile}}(\textcolor{keyword}{const}\ Json::Value\&\ root,\ \textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_storage_a836d8ad34f77316a611d490199e6deb7}{getStationData}}();}
+\DoxyCodeLine{00086\ \};}
+
+\end{DoxyCode}

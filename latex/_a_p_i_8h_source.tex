@@ -1,0 +1,47 @@
+\doxysection{API.\+h}
+\hypertarget{_a_p_i_8h_source}{}\label{_a_p_i_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <curl/curl.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <json/json.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_air_quality_a_p_i_ad3b0a14e4825b9149084bc5300a8888f}{AirQualityAPI}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ WriteCallback(\textcolor{keywordtype}{void}*\ contents,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ nmemb,\ \textcolor{keywordtype}{void}*\ userp);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ performCurlRequest(\textcolor{keyword}{const}\ std::string\&\ url,\ std::string\&\ response);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ parseJsonResponse(\textcolor{keyword}{const}\ std::string\&\ jsonResponse,\ Json::Value\&\ parsedRoot);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_air_quality_a_p_i_ad3b0a14e4825b9149084bc5300a8888f}{AirQualityAPI}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_air_quality_a_p_i_a1bcee590e7af4f9c8cb7413c23d809ba}{\string~AirQualityAPI}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ Json::Value\ \mbox{\hyperlink{class_air_quality_a_p_i_a71f777380fbd4765112ee9d31f7b4c53}{getAllStations}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ Json::Value\ \mbox{\hyperlink{class_air_quality_a_p_i_a3b77012e97ae2fc741511ec228ce0bae}{getAllSensors}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \ \ \ \ Json::Value\ \mbox{\hyperlink{class_air_quality_a_p_i_a91f3810fff0aaccc9b8af82ffeab6d43}{getStationsByCity}}(\textcolor{keyword}{const}\ std::string\&\ cityName);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00085\ \ \ \ \ Json::Value\ \mbox{\hyperlink{class_air_quality_a_p_i_afc7a0ac1e41cb999761ff269e25cbfa4}{getSensorsByStation}}(\textcolor{keywordtype}{int}\ stationId);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00093\ \ \ \ \ Json::Value\ \mbox{\hyperlink{class_air_quality_a_p_i_a9f0f500095fe3c60a59e0d596092156c}{getMeasurementData}}(\textcolor{keywordtype}{int}\ sensorId);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00101\ \ \ \ \ Json::Value\ \mbox{\hyperlink{class_air_quality_a_p_i_a0e000f0adc2a84b2be3c8359aa82d8f0}{getAirQualityIndex}}(\textcolor{keywordtype}{int}\ stationId);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_air_quality_a_p_i_a1372ab6dcd6fb1702b60332a400a853b}{saveJsonToFile}}(\textcolor{keyword}{const}\ Json::Value\&\ root,\ \textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00118\ \ \ \ \ Json::Value\ \mbox{\hyperlink{class_air_quality_a_p_i_aa7ed4cf01c1d45678c1b9f99b82ef8ca}{getAllMeasurementData}}();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00127\ \ \ \ \ Json::Value\ \mbox{\hyperlink{class_air_quality_a_p_i_ade8ea52ae2529df18bfefea00e177a13}{readJsonFromFile}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00128\ \};}
+\DoxyCodeLine{00129\ }
+
+\end{DoxyCode}
